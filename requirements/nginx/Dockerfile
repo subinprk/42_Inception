@@ -3,5 +3,7 @@ From debian:latest
 RUN apt update && apt upgrade && apt install -y \
 	nginx
 
-CMD ["nginx", "-g", "daemon off;"]
+COPY default /etc/nginx/sites-available/.
+# copy the default configuration file to the sites-available directory
 
+CMD ["nginx", "-g", "daemon off;"]

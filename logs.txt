@@ -1,0 +1,76 @@
+[0;33mShowing logs...[0m 
+docker compose -f srcs/docker-compose.yml logs -f
+mariadb  | 250724 15:09:21 mysqld_safe Logging to syslog.
+mariadb  | 250724 15:09:21 mysqld_safe Starting mariadbd daemon with databases from /var/lib/mysql
+wp-php   |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+wp-php   |                                  Dload  Upload   Total   Spent    Left  Speed
+wp-php   |   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+wp-php   |   2 6831k    2  159k    0     0   497k      0  0:00:13 --:--:--  0:00:13  497k100 6831k  100 6831k    0     0  16.1M      0 --:--:-- --:--:-- --:--:-- 70.0M
+wp-php   | Downloading WordPress 6.8.2 (en_US)...
+wp-php   | md5 hash verified: 0feb479400df798eb8a46a4ce6cd1205
+wp-php   | Success: WordPress downloaded.
+wp-php   | Success: Generated 'wp-config.php' file.
+wp-php   | Success: WordPress installed successfully.
+wp-php   | ./script.sh: line 25: php-fpm8.2: command not found
+wp-php   |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+wp-php   |                                  Dload  Upload   Total   Spent    Left  Speed
+wp-php   |   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+wp-php   | 100 6831k  100 6831k    0     0  31.1M      0 --:--:-- --:--:-- --:--:-- 31.1M
+wp-php   | Downloading WordPress 6.8.2 (en_US)...
+wp-php   | Using cached file '/root/.wp-cli/cache/core/wordpress-6.8.2-en_US.tar.gz'...
+wp-php   | Success: WordPress downloaded.
+wp-php   | Success: Generated 'wp-config.php' file.
+wp-php   | WordPress is already installed.
+wp-php   | ./script.sh: line 25: php-fpm8.2: command not found
+wp-php   |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+wp-php   |                                  Dload  Upload   Total   Spent    Left  Speed
+wp-php   |   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+wp-php   | 100 6831k  100 6831k    0     0  28.7M      0 --:--:-- --:--:-- --:--:-- 28.7M
+wp-php   | Downloading WordPress 6.8.2 (en_US)...
+wp-php   | Using cached file '/root/.wp-cli/cache/core/wordpress-6.8.2-en_US.tar.gz'...
+wp-php   | Success: WordPress downloaded.
+wp-php   | Success: Generated 'wp-config.php' file.
+wp-php   | WordPress is already installed.
+wp-php   | ./script.sh: line 25: php-fpm8.2: command not found
+wp-php   |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+wp-php   |                                  Dload  Upload   Total   Spent    Left  Speed
+wp-php   |   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+wp-php   | 100 6831k  100 6831k    0     0  34.3M      0 --:--:-- --:--:-- --:--:-- 34.3M
+wp-php   | Downloading WordPress 6.8.2 (en_US)...
+wp-php   | Using cached file '/root/.wp-cli/cache/core/wordpress-6.8.2-en_US.tar.gz'...
+wp-php   | Success: WordPress downloaded.
+wp-php   | Success: Generated 'wp-config.php' file.
+wp-php   | WordPress is already installed.
+wp-php   | ./script.sh: line 25: php-fpm8.2: command not found
+wp-php   |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+wp-php   |                                  Dload  Upload   Total   Spent    Left  Speed
+wp-php   |   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+wp-php   | 100 6831k  100 6831k    0     0  31.1M      0 --:--:-- --:--:-- --:--:-- 31.1M
+wp-php   | Downloading WordPress 6.8.2 (en_US)...
+wp-php   | Using cached file '/root/.wp-cli/cache/core/wordpress-6.8.2-en_US.tar.gz'...
+wp-php   | Success: WordPress downloaded.
+wp-php   | Success: Generated 'wp-config.php' file.
+wp-php   | WordPress is already installed.
+wp-php   | ./script.sh: line 25: php-fpm8.2: command not found
+wp-php   |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+wp-php   |                                  Dload  Upload   Total   Spent    Left  Speed
+wp-php   |   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+wp-php   | 100 6831k  100 6831k    0     0  33.5M      0 --:--:-- --:--:-- --:--:-- 33.5M
+wp-php   | Downloading WordPress 6.8.2 (en_US)...
+wp-php   | Using cached file '/root/.wp-cli/cache/core/wordpress-6.8.2-en_US.tar.gz'...
+wp-php   | Success: WordPress downloaded.
+wp-php   | Success: Generated 'wp-config.php' file.
+wp-php   | WordPress is already installed.
+wp-php   | ./script.sh: line 25: php-fpm8.2: command not found
+[Kwp-php exited with code 127
+wp-php   |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+wp-php   |                                  Dload  Upload   Total   Spent    Left  Speed
+wp-php   |   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+wp-php   | 100 6831k  100 6831k    0     0  20.5M      0 --:--:-- --:--:-- --:--:-- 20.5M
+wp-php   | Downloading WordPress 6.8.2 (en_US)...
+wp-php   | Using cached file '/root/.wp-cli/cache/core/wordpress-6.8.2-en_US.tar.gz'...
+wp-php   | Success: WordPress downloaded.
+wp-php   | Success: Generated 'wp-config.php' file.
+wp-php   | WordPress is already installed.
+wp-php   | ./script.sh: line 25: php-fpm8.2: command not found
+[Kwp-php exited with code 127

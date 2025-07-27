@@ -2,6 +2,7 @@ FROM debian:bullseye
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 	mariadb-server \
+	gettext-base \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/*
 
@@ -15,4 +16,3 @@ RUN chown -R mysql:mysql /var/lib/mysql /run/mysqld
 RUN chmod +x script.sh
 
 CMD ["./script.sh"]
-

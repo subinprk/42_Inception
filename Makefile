@@ -25,7 +25,7 @@ up: build
 	@echo "$(GREEN)Starting all services...$(NC)"
 	docker compose -f $(COMPOSE_FILE) up -d
 	@echo "$(GREEN) All services are running!$(NC)"
-	@echo "$(GREEN) Access your site at: https://localhost$(NC)"
+	@echo "$(GREEN) Access your site at: https://subpark.42.fr$(NC)"
 
 # Stop all services
 down:

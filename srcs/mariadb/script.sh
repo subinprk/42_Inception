@@ -21,10 +21,16 @@ if [ ! -d "/var/lib/mysql/mysql" ]; then
     # Execute the SQL commands
     mysql -u root < /tmp/init_processed.sql
     
+    # Force wpuser to use password authentication
+    mysql -u root -e "ALTER USER '${MYSQL_USER}'@'%' IDENTIFIED WITH mysql_native_password BY '${MYSQL_PASSWORD}'; FLUSH PRIVILEGES;"
+    
+    # Remove anonymous users and secure the installation
+    mysql -u root -e "DELETE FROM mysql.user WHERE User=''; FLUSH PRIVILEGES;"
+    
     # Set root password using mysqladmin (more reliable)
     echo "Password Setting"
     mysqladmin -u root password "${MYSQL_ROOT_PASSWORD}"
-    mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}'; FLUSH PRIVILEGES;"
+    mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}';"
 
     
     # Stop the background MySQL service
@@ -36,7 +42,8 @@ else
 fi
 
     # Set up a health check user
-mysql -u root -p${MYSQL_ROOT_PASSWORD} -e "CREATE USER IF NOT EXISTS '${MYSQL_USER}'@'localhost' IDENTIFIED BY '${MYSQL_PASSWORD}';"
+# mysql -u root -p${MYSQL_ROOT_PASSWORD} -e "CREATE USER IF NOT EXISTS '${MYSQL_USER}'@'localhost' IDENTIFIED BY '${MYSQL_PASSWORD}';"
+# mysql -u root -e "ALTER USER '${MYSQL_USER}'@'localhost' IDENTIFIED WITH mysql_native_password BY '${MYSQL_PASSWORD}';"
 # Start MySQL in foreground
 echo "Starting MariaDB..."
 exec mysqld

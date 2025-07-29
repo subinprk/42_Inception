@@ -45,6 +45,7 @@ fclean: down
 	docker compose -f $(COMPOSE_FILE) down --volumes --rmi all
 	docker system prune -af --volumes
 	@echo "$(GREEN) Full cleanup completed$(NC)"
+	rm -rf db/* web/*
 
 # Rebuild everything from scratch
 re: fclean all

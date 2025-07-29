@@ -12,14 +12,6 @@ if [ ! -d "/var/lib/mysql/mysql" ]; then
     # Wait for MySQL to start
     sleep 10
     
-    # echo "Setting up database and user..."
-    # echo "Environment variables: MYSQL_DATABASE=${MYSQL_DATABASE}, MYSQL_USER=${MYSQL_USER}, MYSQL_PASSWORD=${MYSQL_PASSWORD}"
-    # echo "MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}"
-    
-    # # Show the original file content
-    # echo "Original init.sql content:"
-    # cat /etc/mysql/init.sql
-    
     # Process the init.sql file with environment variable substitution
     envsubst  < /etc/mysql/init.sql > /tmp/init_processed.sql
     
@@ -30,7 +22,10 @@ if [ ! -d "/var/lib/mysql/mysql" ]; then
     mysql -u root < /tmp/init_processed.sql
     
     # Set root password using mysqladmin (more reliable)
+    echo "Password Setting"
     mysqladmin -u root password "${MYSQL_ROOT_PASSWORD}"
+    mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}'; FLUSH PRIVILEGES;"
+
     
     # Stop the background MySQL service
     mysqladmin -u root -p${MYSQL_ROOT_PASSWORD} shutdown
@@ -40,6 +35,8 @@ else
     echo "MariaDB data directory already exists, skipping initialization."
 fi
 
+    # Set up a health check user
+mysql -u root -p${MYSQL_ROOT_PASSWORD} -e "CREATE USER IF NOT EXISTS '${MYSQL_USER}'@'localhost' IDENTIFIED BY '${MYSQL_PASSWORD}';"
 # Start MySQL in foreground
 echo "Starting MariaDB..."
 exec mysqld

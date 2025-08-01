@@ -10,6 +10,8 @@
 # this is only for the mysqld standalone daemon
 [mysqld]
 
+default_authentication = mysql_native_password
+
 #
 # * Basic Settings
 #

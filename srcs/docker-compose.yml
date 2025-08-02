@@ -10,7 +10,7 @@ services:
       - wordpress
       - mariadb
     volumes:
-      - ../web:/var/www/html
+      - wordpress_data:/var/www/html
     networks:
       - inception
 
@@ -32,7 +32,7 @@ services:
       - WP_TITLE=${WP_TITLE}
       - WP_URL=${WP_URL}
     volumes:
-      - ../web:/var/www/html
+      - wordpress_data:/var/www/html
     networks:
       - inception
 
@@ -47,11 +47,11 @@ services:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     volumes:
-      - ../db:/var/lib/mysql
+      - mariadb_data:/var/lib/mysql
     networks:
       - inception
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", root, "-p${MYSQL_ROOT_PASSWORD}"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$$MYSQL_ROOT_PASSWORD"]
       timeout: 20s
       retries: 10
 
